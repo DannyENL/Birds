@@ -17,20 +17,18 @@
                 Text="{Binding Text}"
                 HeightRequest="50" 
                 MaxLength="40"/>
+        <Image x:Name="BirdImage"
+               HeightRequest="240"/>
         <Editor Placeholder="Additional Notes"
                 Text="{Binding AdditionalNotes}"
-                HeightRequest="150" 
-                MaxLength="200"/>
+                HeightRequest="50" 
+                MaxLength="100"/>
 
-        <Grid ColumnDefinitions="*,*">
-            <!-- Layout children in two columns -->
-            <Button Text="Take New Photo" x:Name="NewPhotoButton"
-                    Clicked="OnNewPhotoButtonClicked" />
-            <Button Text="Existing Photo" x:Name="ExistingPhotoButton" Grid.Column="1"
-                    Clicked="OnExistingPhotoButtonClicked" />
-        </Grid>
-                <Button Text="View Sighted Location" x:Name="LocationButton" IsVisible="false"
-                    Clicked="OnLocationButtonClicked" />
+        <Button Text="Add Photo" x:Name="ExistingPhotoButton" Grid.Column="1"
+                Clicked="OnPhotoButtonClicked" />
+        <Button Text="View Sighted Location" x:Name="LocationButton" IsVisible="false"
+            Clicked="OnLocationButtonClicked" />
+
         <Grid ColumnDefinitions="*,*">
             <!-- Layout children in two columns -->
             <Button Text="Save"

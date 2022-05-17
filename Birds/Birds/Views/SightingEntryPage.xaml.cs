@@ -3,6 +3,7 @@ using System.IO;
 using Birds.Models;
 using Xamarin.Forms;
 using Xamarin.Essentials;
+using Plugin.Media;
 
 namespace Birds.Views
 {
@@ -34,6 +35,7 @@ namespace Birds.Views
                 Sighting sighting = await App.Database.GetSightingAsync(id);
                 BindingContext = sighting;
                 LocationButton.IsVisible = true;
+                BirdImage.Source = sighting.ImagePath;
             }
             catch (Exception)
             {
@@ -60,14 +62,23 @@ namespace Birds.Views
             // Navigate backwards
             await Shell.Current.GoToAsync("..");
         }
-        async void OnExistingPhotoButtonClicked (object sender, EventArgs e)
-        {
-            return;
-        }
 
-        async void OnNewPhotoButtonClicked(object sender, EventArgs e)
+        async void OnPhotoButtonClicked(object sender, EventArgs e)
         {
-            var photo = await MediaPicker.PickPhotoAsync();
+            var file = await Plugin.Media.CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
+            {
+                PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium,
+            });
+
+            var sighting = (Sighting)BindingContext;
+            sighting.ImagePath = file.Path;
+            BirdImage.Source = sighting.ImagePath;
+//            BirdImage.Source = ImageSource.FromStream(() =>
+//            {
+  //              var stream = file.GetStream();
+    //            file.Dispose();
+      //          return stream;
+       //     });
         }
 
         async void OnLocationButtonClicked(object sender, EventArgs e)
