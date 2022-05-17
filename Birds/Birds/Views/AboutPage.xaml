@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Birds.Views.AboutPage"
+             Title="About">
+    <!-- Layout children in two rows -->
+    <Grid RowDefinitions="Auto,*">
+        <!-- Layout children vertically -->
+        <StackLayout Grid.Row="1"
+                     Margin="{StaticResource PageMargin}"
+                     Spacing="20">
+            <Image Source="bird_watcher.png"
+               BackgroundColor="#A1CEFE" />
+            <Label FontSize="22">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span Text="Bird Watcher"
+                                  FontAttributes="Bold"
+                                  FontSize="22" />
+                            <Span Text=" v1.0" />
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label Text="Welcome to Bird Watcher! You can use this app while birdwatching to record your sightings. Have fun exploring and finding birds!" />
+            <Label Text="There are many different species of birds which can be difficult to identify. Using a guide like the one provided by the RSPB can incredibly be helpful." />
+            <Button Text="Learn more about identifying birds"
+                    Clicked="OnIdentifyButtonClicked" />
+            <Label Text="This app is written in XAML and C# with the Xamarin Platform." />
+            <Button Text="Learn more about Xamarin"
+                    Clicked="OnButtonClicked" />
+        </StackLayout>
+    </Grid>
+</ContentPage>
