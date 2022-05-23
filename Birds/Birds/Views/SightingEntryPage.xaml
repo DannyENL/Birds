@@ -24,10 +24,17 @@
                 HeightRequest="50" 
                 MaxLength="100"/>
 
-        <Button Text="Add Photo" x:Name="ExistingPhotoButton" Grid.Column="1"
+        <Button Text="Add Photo" x:Name="ExistingPhotoButton"
                 Clicked="OnPhotoButtonClicked" />
-        <Button Text="View Sighted Location" x:Name="LocationButton" IsVisible="false"
+
+        <Grid ColumnDefinitions="*,*" IsVisible="false" x:Name="LocationButton">
+            <!-- Layout children in two columns -->
+            <Button Text="View Location" FontSize="15"
             Clicked="OnLocationButtonClicked" />
+            <Button Text="Reset Location" Grid.Column="1" FontSize="14"
+            Clicked="OnUpdateLocationButtonClicked" />
+        </Grid>
+
 
         <Grid ColumnDefinitions="*,*">
             <!-- Layout children in two columns -->

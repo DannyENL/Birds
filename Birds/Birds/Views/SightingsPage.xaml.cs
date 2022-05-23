@@ -20,8 +20,8 @@ namespace Birds.Views
 
             // Retrieve all the sightings from the database, and set them as the
             // data source for the CollectionView.
-            collectionView.ItemsSource = await App.Database.GetSightingsAsync();
             SearchBar.Text = "";
+            collectionView.ItemsSource = await App.Database.GetSightingsAsync();
         }
 
         async void OnSelectionChanged(object sender, SelectionChangedEventArgs e)

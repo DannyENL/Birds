@@ -43,13 +43,14 @@ namespace Birds.Views
             }
         }
 
+
         async void OnSaveButtonClicked(object sender, EventArgs e)
         {
             var sighting = (Sighting)BindingContext;
             sighting.Date = DateTime.UtcNow;
-            var location = await Geolocation.GetLastKnownLocationAsync();
             if (sighting.Latitude==0)
             {
+                var location = await Geolocation.GetLastKnownLocationAsync();
                 sighting.Latitude = location.Latitude;
                 sighting.Longitude = location.Longitude;
             }
@@ -58,9 +59,8 @@ namespace Birds.Views
             {
                 await App.Database.SaveSightingAsync(sighting);
             }
+            await DisplayAlert("Sighting Updated", "Your sighting has been saved succesfully.", "OK");
 
-            // Navigate backwards
-            await Shell.Current.GoToAsync("..");
         }
 
         async void OnPhotoButtonClicked(object sender, EventArgs e)
@@ -73,12 +73,15 @@ namespace Birds.Views
             var sighting = (Sighting)BindingContext;
             sighting.ImagePath = file.Path;
             BirdImage.Source = sighting.ImagePath;
-//            BirdImage.Source = ImageSource.FromStream(() =>
-//            {
-  //              var stream = file.GetStream();
-    //            file.Dispose();
-      //          return stream;
-       //     });
+        }
+
+        async void OnUpdateLocationButtonClicked(object sender, EventArgs e)
+        {
+            var sighting = (Sighting)BindingContext;
+            var location = await Geolocation.GetLastKnownLocationAsync();
+            sighting.Latitude = location.Latitude;
+            sighting.Longitude = location.Longitude;
+            await DisplayAlert("Location Succesfully Reset", "The location for this sighting has been updated to match your current position. Press Save to confirm your changes.", "OK");
         }
 
         async void OnLocationButtonClicked(object sender, EventArgs e)
