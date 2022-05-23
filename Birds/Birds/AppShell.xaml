@@ -23,7 +23,7 @@
 
     <!-- Display a bottom tab bar containing two tabs -->
     <TabBar>
-        <ShellContent Title="Notes"
+        <ShellContent Title="Sightings"
                       Icon="icon_feed.png"
                       ContentTemplate="{DataTemplate views:SightingsPage}" />
         <ShellContent Title="About"
