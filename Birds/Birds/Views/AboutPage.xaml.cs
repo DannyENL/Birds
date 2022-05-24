@@ -6,20 +6,20 @@ namespace Birds.Views
 {
     public partial class AboutPage : ContentPage
     {
-        public AboutPage()
+        public AboutPage() //Constructor
         {
             InitializeComponent();
         }
 
-        async void OnButtonClicked(object sender, EventArgs e)
+        async void OnButtonClicked(object sender, EventArgs e) //Executed when the user presses the "Learn more about Xamarin" button
         {
-            // Launch the specified URL in the system browser.
+            //Open the Xamarin quickstart page in the user's default web browser.
             await Launcher.OpenAsync("https://aka.ms/xamarin-quickstart");
         }
 
-        async void OnIdentifyButtonClicked(object sender, EventArgs e)
+        async void OnIdentifyButtonClicked(object sender, EventArgs e) //Executed when the user presses the "Learn more about identifying birds" button
         {
-            // Launch the specified URL in the system browser.
+            //Open the RSPB bird identification page in the user's default web browser.
             await Launcher.OpenAsync("https://www.rspb.org.uk/birds-and-wildlife/wildlife-guides/identify-a-bird/");
         }
     }

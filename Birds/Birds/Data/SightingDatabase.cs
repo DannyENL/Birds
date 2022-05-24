@@ -6,48 +6,43 @@ using Xamarin.Forms;
 
 namespace Birds.Data
 {
-    public class SightingDatabase
+    public class SightingDatabase //Used to locally save sighting objects
     {
-        readonly SQLiteAsyncConnection database;
+        readonly SQLiteAsyncConnection database; //Init database
 
-        public SightingDatabase(string dbPath)
+        public SightingDatabase(string dbPath) //Constructor
         {
-            database = new SQLiteAsyncConnection(dbPath);
-            database.CreateTableAsync<Sighting>().Wait();
+            database = new SQLiteAsyncConnection(dbPath); //Create new database
+            database.CreateTableAsync<Sighting>().Wait(); //Create table of sightings
         }
 
-        public Task<List<Sighting>> GetSightingsAsync()
+        public Task<List<Sighting>> GetSightingsAsync() //Used to get all sightings
         {
-            //Get all notes.
-            return database.Table<Sighting>().ToListAsync();
+            return database.Table<Sighting>().ToListAsync(); //Returns the sightings table in a list format
         }
 
-        public Task<Sighting> GetSightingAsync(int id)
+        public Task<Sighting> GetSightingAsync(int id) //Used to get information about a specific sighting
         {
-            // Get a specific note.
             return database.Table<Sighting>()
                             .Where(i => i.ID == id)
-                            .FirstOrDefaultAsync();
+                            .FirstOrDefaultAsync(); //Returns the sighting object with the given ID
         }
 
-        public Task<int> SaveSightingAsync(Sighting sighting)
+        public Task<int> SaveSightingAsync(Sighting sighting) //Save a given sighting to the database
         {
-            if (sighting.ID != 0)
+            if (sighting.ID != 0) //If the sighting ID has already been set, i.e. we're updating an already existing sighting
             {
-                // Update an existing sighting.
-                return database.UpdateAsync(sighting);
+                return database.UpdateAsync(sighting); //Update the sighting object to match the new one
             }
-            else
+            else //Otherwise, if this is a brand new sighting
             {
-                // Save a new note.
-                return database.InsertAsync(sighting);
+                return database.InsertAsync(sighting); //Insert it into the table
             }
         }
 
-        public Task<int> DeleteSightingAsync(Sighting sighting)
+        public Task<int> DeleteSightingAsync(Sighting sighting) //Delete a given sighting from the database
         {
-            // Delete a note.
-            return database.DeleteAsync(sighting);
+            return database.DeleteAsync(sighting); //Deletes the given sighting from the database
         }
     }
 }

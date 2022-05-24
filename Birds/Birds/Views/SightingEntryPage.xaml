@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Birds.Views.SightingEntryPage"
-             Title="Record a Sighting">
+             Title="Record a Sighting"> <!-- Page title -->
     <ContentPage.Resources>
         <!-- Implicit styles -->
         <Style TargetType="{x:Type Editor}">
@@ -16,33 +16,33 @@
         <Editor Placeholder="Sighted bird"
                 Text="{Binding Text}"
                 HeightRequest="50" 
-                MaxLength="40"/>
+                MaxLength="40"/> <!-- Editor for entering the sighted bird name, 40 characters max -->
         <Image x:Name="BirdImage"
-               HeightRequest="240"/>
+               HeightRequest="240"/> <!-- The picture of the bird -->
         <Editor Placeholder="Additional Notes"
                 Text="{Binding AdditionalNotes}"
                 HeightRequest="50" 
-                MaxLength="100"/>
+                MaxLength="100"/> <!-- Editor for entering additional notes, 100 characters max -->
 
         <Button Text="Add Photo" x:Name="ExistingPhotoButton"
-                Clicked="OnPhotoButtonClicked" />
+                Clicked="OnPhotoButtonClicked" /> <!-- Add Photo button executes OnPhotoButtonClicked function when pressed -->
 
         <Grid ColumnDefinitions="*,*" IsVisible="false" x:Name="LocationButton">
             <!-- Layout children in two columns -->
             <Button Text="View Location" FontSize="15"
-            Clicked="OnLocationButtonClicked" />
+            Clicked="OnLocationButtonClicked" /> <!-- View Location button executes OnLocationButtonClicked function when pressed -->
             <Button Text="Reset Location" Grid.Column="1" FontSize="14"
-            Clicked="OnUpdateLocationButtonClicked" />
+            Clicked="OnUpdateLocationButtonClicked" /> <!-- Reset Location button executes OnUpdateLocationButtonClicked function when pressed -->
         </Grid>
 
 
         <Grid ColumnDefinitions="*,*">
             <!-- Layout children in two columns -->
             <Button Text="Save"
-                    Clicked="OnSaveButtonClicked" />
+                    Clicked="OnSaveButtonClicked" /> <!-- Save button executes OnSaveButtonClicked function when pressed -->
             <Button Grid.Column="1"
                     Text="Delete"
-                    Clicked="OnDeleteButtonClicked"/>
+                    Clicked="OnDeleteButtonClicked"/> <!-- Delete Location button executes OnDeleteButtonClicked function when pressed -->
         </Grid>
     </StackLayout>
 </ContentPage>

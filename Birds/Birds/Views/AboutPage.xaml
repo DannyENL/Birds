@@ -9,27 +9,27 @@
         <StackLayout Grid.Row="1"
                      Margin="{StaticResource PageMargin}"
                      Spacing="20">
-            <Image Source="bird_watcher.png"
-               BackgroundColor="#A1CEFE" />
+            <Image Source="bird_watcher.png" 
+               BackgroundColor="#A1CEFE" /> <!-- Bird watcher logo -->
             <Label FontSize="22">
                 <Label.FormattedText>
                     <FormattedString>
                         <FormattedString.Spans>
-                            <Span Text="Bird Watcher"
+                            <Span Text="Bird Watcher" 
                                   FontAttributes="Bold"
                                   FontSize="22" />
-                            <Span Text=" v1.0" />
+                            <Span Text=" v1.0" /> <!-- Bird watcher title text -->
                         </FormattedString.Spans>
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
-            <Label Text="Welcome to Bird Watcher! You can use this app while birdwatching to record your sightings. Have fun exploring and finding birds!" />
-            <Label Text="There are many different species of birds which can be difficult to identify. Using a guide like the one provided by the RSPB can incredibly be helpful." />
-            <Button Text="Learn more about identifying birds"
-                    Clicked="OnIdentifyButtonClicked" />
-            <Label Text="This app is written in XAML and C# with the Xamarin Platform." />
+            <Label Text="Welcome to Bird Watcher! You can use this app while birdwatching to record your sightings. Have fun exploring and finding birds!" /> <!-- About text -->
+            <Label Text="There are many different species of birds which can be difficult to identify. Using a guide like the one provided by the RSPB can incredibly be helpful." /> <!-- Tips text -->
+            <Button Text="Learn more about identifying birds" 
+                    Clicked="OnIdentifyButtonClicked" /> <!-- Executes the OnIdentifyButtonClicked method when this button is pressed -->
+            <Label Text="This app is written in XAML and C# with the Xamarin Platform." /> <!-- App text -->
             <Button Text="Learn more about Xamarin"
-                    Clicked="OnButtonClicked" />
+                    Clicked="OnButtonClicked" /> <!-- Executes the OnButtonClicked method when this button is pressed -->
         </StackLayout>
     </Grid>
 </ContentPage>
