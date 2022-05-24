@@ -9,7 +9,7 @@
         <Style x:Key="BaseStyle"
                TargetType="Element">
             <Setter Property="Shell.BackgroundColor"
-                    Value="{StaticResource AppPrimaryColor}" />
+                    Value="{StaticResource AppPrimaryColor}" /> 
             <Setter Property="Shell.ForegroundColor"
                     Value="{StaticResource SecondaryColor}" />
             <Setter Property="Shell.TitleColor"
@@ -19,15 +19,15 @@
         </Style>
         <Style TargetType="TabBar"
                BasedOn="{StaticResource BaseStyle}" />
-    </Shell.Resources>
+    </Shell.Resources> 
 
     <!-- Display a bottom tab bar containing two tabs -->
     <TabBar>
         <ShellContent Title="Sightings"
-                      Icon="icon_feed.png"
-                      ContentTemplate="{DataTemplate views:SightingsPage}" />
+                      Icon="icon_feed.png" 
+                      ContentTemplate="{DataTemplate views:SightingsPage}" /> <!-- Sightings button, takes you to the sightings page -->
         <ShellContent Title="About"
                       Icon="icon_about.png"
-                      ContentTemplate="{DataTemplate views:AboutPage}" />
+                      ContentTemplate="{DataTemplate views:AboutPage}" /> <!-- About button, takes you to the about page -->
     </TabBar>
 </Shell>

@@ -6,31 +6,31 @@
     <!-- Resources used by multiple pages in the application -->
     <Application.Resources>
 
-        <Thickness x:Key="PageMargin">20</Thickness>
+        <Thickness x:Key="PageMargin">20</Thickness> <!-- Page margin 20 pixels wide -->
 
         <!-- Colors -->
-        <Color x:Key="AppPrimaryColor">#D6E9FC</Color>
-        <Color x:Key="AppBackgroundColor">#FFFF</Color>
-        <Color x:Key="PrimaryColor">#444444</Color>
-        <Color x:Key="SecondaryColor">Black</Color>
-        <Color x:Key="TertiaryColor">#444444</Color>
+        <Color x:Key="AppPrimaryColor">#D6E9FC</Color> <!-- Main colour, sky blue -->
+        <Color x:Key="AppBackgroundColor">#FFFF</Color> <!--Background colour, white-->
+        <Color x:Key="PrimaryColor">#444444</Color> <!-- Primary text colour, black -->
+        <Color x:Key="SecondaryColor">Black</Color> <!-- Secondary text colour, black -->
+        <Color x:Key="TertiaryColor">#444444</Color> <!-- Tertiary text colour, black -->
 
-        <!-- Implicit styles -->
+        <!-- Implicit styles used throughout app -->
         <Style TargetType="ContentPage"
-               ApplyToDerivedTypes="True">
+               ApplyToDerivedTypes="True"> <!-- All ContentPage objects use this -->
             <Setter Property="BackgroundColor"
-                    Value="{StaticResource AppBackgroundColor}" />
+                    Value="{StaticResource AppBackgroundColor}" /> <!-- White background colour -->
         </Style>
-
-        <Style TargetType="Button">
+        
+        <Style TargetType="Button"> <!-- All buttons use this -->
             <Setter Property="FontSize"
-                    Value="Medium" />
+                    Value="Medium" /> <!-- Medium font size -->
             <Setter Property="BackgroundColor"
-                    Value="{StaticResource AppPrimaryColor}" />
+                    Value="{StaticResource AppPrimaryColor}" /> <!-- Button background colour -->
             <Setter Property="TextColor"
-                    Value="{StaticResource SecondaryColor}" />
+                    Value="{StaticResource SecondaryColor}" /> <!-- Black button text colour-->
             <Setter Property="CornerRadius"
-                    Value="5" />
+                    Value="5" /> <!-- Rounded corners -->
         </Style>
 
     </Application.Resources>
