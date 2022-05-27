@@ -9,11 +9,11 @@
         <Thickness x:Key="PageMargin">20</Thickness> <!-- Page margin 20 pixels wide -->
 
         <!-- Colors -->
-        <Color x:Key="AppPrimaryColor">#D6E9FC</Color> <!-- Main colour, sky blue -->
-        <Color x:Key="AppBackgroundColor">#FFFF</Color> <!--Background colour, white-->
-        <Color x:Key="PrimaryColor">#444444</Color> <!-- Primary text colour, black -->
-        <Color x:Key="SecondaryColor">Black</Color> <!-- Secondary text colour, black -->
-        <Color x:Key="TertiaryColor">#444444</Color> <!-- Tertiary text colour, black -->
+        <Color x:Key="AppPrimaryColor">#0B5B52</Color> <!-- Main colour -->
+        <Color x:Key="AppBackgroundColor">#D4C99C</Color> <!--Background colour -->
+        <Color x:Key="PrimaryColor">White</Color> <!-- Primary text colour, grey -->
+        <Color x:Key="SecondaryColor">White</Color> <!-- Secondary text colour, black -->
+        <Color x:Key="TertiaryColor">Gray</Color> <!-- Tertiary text colour, grey -->
 
         <!-- Implicit styles used throughout app -->
         <Style TargetType="ContentPage"

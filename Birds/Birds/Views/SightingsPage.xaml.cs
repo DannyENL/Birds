@@ -16,9 +16,22 @@ namespace Birds.Views
 
         protected override async void OnAppearing() //Executed when the page loads
         {
-            base.OnAppearing();
             SearchBar.Text = ""; //Reset the search bar text
             collectionView.ItemsSource = await App.Database.GetSightingsAsync(); //Retrieve all the sightings from the database, and set them as the data source for the CollectionView.
+            List <Sighting> all_sightings = await App.Database.GetSightingsAsync();  //Get all the sightings
+            if (all_sightings.Count==0) //If there are no sightings
+            {
+                SearchBar.IsVisible = false; //Hide the search bar to avoid confusion
+                Instructions.IsVisible = true; //Show the instructions to add a new sighting
+            }
+            base.OnAppearing();
+
+            MessagingCenter.Subscribe<object>(this, "Added", (sender) =>
+            {
+                SearchBar.IsVisible = true; //Show the search bar
+                Instructions.IsVisible = false; //Hide the instructions
+
+            });
         }
 
         async void OnSelectionChanged(object sender, SelectionChangedEventArgs e) //Executed when a sighting is selected

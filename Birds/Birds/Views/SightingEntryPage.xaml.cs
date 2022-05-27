@@ -52,6 +52,7 @@ namespace Birds.Views
             }
 
             await App.Database.SaveSightingAsync(sighting); //Save the sighting to the database
+            MessagingCenter.Send<object>(this, "Added"); //Notify sightings page to update contents
             await DisplayAlert("Sighting Updated", "Your sighting has been saved succesfully.", "OK"); //Display an alert message informing the user that their sighting has been updated
         }
 

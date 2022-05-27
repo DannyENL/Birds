@@ -15,7 +15,7 @@
             <Setter Property="Shell.TitleColor"
                     Value="{StaticResource SecondaryColor}" />
             <Setter Property="Shell.TabBarUnselectedColor"
-                    Value="#444444"/>
+                    Value="#BCBCBC"/>
         </Style>
         <Style TargetType="TabBar"
                BasedOn="{StaticResource BaseStyle}" />

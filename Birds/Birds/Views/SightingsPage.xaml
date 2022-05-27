@@ -36,6 +36,9 @@
 
         <StackLayout Grid.Row="2"
                      Margin="{StaticResource PageMargin}">
+
+            <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="20"  IsVisible="false" x:Name="Instructions">Welcome to Bird Watcher! You will be able to see all your recorded sightings on this page. To get started, press the "Record New Sighting" button in the top right.</Label>
+
             <!-- Display sightings in a list -->
             <CollectionView x:Name="collectionView"
                     Margin="{StaticResource PageMargin}"
